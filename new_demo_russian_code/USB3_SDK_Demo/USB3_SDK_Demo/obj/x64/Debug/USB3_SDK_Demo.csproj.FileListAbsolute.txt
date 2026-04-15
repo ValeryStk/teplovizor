@@ -1,0 +1,41 @@
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\bin\x64\Debug\USB3_SDK_Demo.exe
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\bin\x64\Debug\USB3_SDK_Demo.pdb
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\MainWindow.g.cs
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\App.g.cs
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo_MarkupCompile.cache
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo_MarkupCompile.lref
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\MainWindow.baml
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.g.resources
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.Properties.Resources.resources
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.csproj.GenerateResource.Cache
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.exe
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.pdb
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.csprojResolveAssemblyReference.cache
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib_V1.1_20200710\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.exe
+G:\01325mjb\项目\非制冷机芯软件\Plug417rPlus\plug417s_win_sdk_20200605\USB3.0Lib_V1.1_20200710\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.pdb
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\bin\x64\Debug\USB3_SDK_Demo.exe
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\bin\x64\Debug\USB3_SDK_Demo.pdb
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.csprojResolveAssemblyReference.cache
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\MainWindow.g.cs
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\App.g.cs
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo_MarkupCompile.cache
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo_MarkupCompile.lref
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\MainWindow.baml
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.g.resources
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.Properties.Resources.resources
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.csproj.GenerateResource.Cache
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.exe
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\SDK\USB3.0_SDK_V1.1_20210823\demo\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.pdb
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\bin\x64\Debug\USB3_SDK_Demo.exe
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\bin\x64\Debug\USB3_SDK_Demo.pdb
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.csprojResolveAssemblyReference.cache
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\MainWindow.g.cs
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\App.g.cs
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo_MarkupCompile.cache
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo_MarkupCompile.lref
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\MainWindow.baml
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.g.resources
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.Properties.Resources.resources
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.csproj.GenerateResource.Cache
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.exe
+C:\Users\VALERIY\Desktop\Тепловизор PLUG617\new_demo_russian_code\USB3_SDK_Demo\USB3_SDK_Demo\obj\x64\Debug\USB3_SDK_Demo.pdb
