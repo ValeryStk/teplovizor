@@ -89,6 +89,8 @@
             <TextBlock Text="Выбор камеры" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1131,10,0,0" Grid.Row="1"/>
             <ComboBox Name="cbDeviceList" SelectedIndex="0" Width="120" Height="35" FontSize="12" Padding="-10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1321,10,0,0" Grid.Row="1"></ComboBox>
             <Button x:Name="buttonRecord" Content="Сохранить изображение&#xD;&#xA;" HorizontalAlignment="Right" Margin="0,307.96,159,0" Grid.Row="1" VerticalAlignment="Top" Width="310" Height="41.8" FontSize="20" Click="buttonRecord_Click"/>
+            <Button x:Name="Mnimize" Content="_" HorizontalAlignment="Right" Margin="0,10,60,12" Width="41" Click="button_Click"/>
+            <Label x:Name="label" Content="0" Margin="435,5,0,10" HorizontalAlignment="Left" Width="307"/>
         </Grid>
     </Viewbox>
 </Window>

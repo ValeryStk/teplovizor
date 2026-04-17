@@ -37,7 +37,9 @@ namespace USB3_SDK_Demo
             Thread t1 = new Thread(OnHandleVideoData);
             t1.IsBackground = true;
             t1.Start();
-        }
+
+
+    }
         public ViewModel vm = new ViewModel();
 
         private int width;
@@ -48,6 +50,7 @@ namespace USB3_SDK_Demo
         private GSTUsbManager.DeviceConnectStatusCB connectCB;
         private WriteableBitmap bmp;
         private Queue<byte[]> rgbQ = new Queue<byte[]>();
+        private Queue<ushort[]> y16Q = new Queue<ushort[]>();
         private SerialPort sp = new SerialPort();
         private bool isRecord = false;
 
@@ -67,11 +70,11 @@ namespace USB3_SDK_Demo
             int ret = GSTUsbManager.Initialize();
             if (ret == -1)
             {
-                MessageBox.Show("未找到设备!");
+                MessageBox.Show("Камера не обнаружена!");
             }
             else if (ret < -1)
             {
-                MessageBox.Show("设备初始化失败!");
+                MessageBox.Show("Камера не обнаружена!");
             }
             else
             {
@@ -213,9 +216,22 @@ namespace USB3_SDK_Demo
             }
             if (data.frame_src_data_length > 0)
             {
-                // Y16数据
-                short[] y16Data = new short[data.frame_src_data_length];
-                Marshal.Copy(data.frame_src_data, y16Data, 0, data.frame_src_data_length);
+                byte[] srcBytes = new byte[data.frame_src_data_length];
+                Marshal.Copy(data.frame_src_data, srcBytes, 0, data.frame_src_data_length);
+
+                ushort[] y16Image = new ushort[srcBytes.Length / 2];
+                for (int i = 0; i < y16Image.Length; i++)
+                {
+                    y16Image[i] = (ushort)(
+                        srcBytes[i * 2 + 0] |
+                        (srcBytes[i * 2 + 1] << 8)
+                    );
+                }
+                
+                if(y16Q.Count==3) y16Q.Clear();
+                y16Q.Enqueue(y16Image);
+                Console.WriteLine("video callback................................................" + y16Q.Count);
+
             }
             if (data.frame_yuv_data_length > 0)
             {
@@ -252,6 +268,18 @@ namespace USB3_SDK_Demo
                     byte[] rgbData = rgbQ.Dequeue();
                     this.Dispatcher.Invoke(new Action(() =>
                     {
+                        ushort? adcValue = null;
+
+                        if (y16Q.Count > 0)
+                        {
+                            ushort[] y16Image = y16Q.Peek();
+                            adcValue = y16Image[300];
+                            Console.WriteLine("ADC value: " + adcValue);
+                            label.Content = adcValue?.ToString() ?? "N/A";
+                        }
+
+                        
+
                         bmp.WritePixels(new Int32Rect(0, 0, width, height), rgbData, bmp.BackBufferStride, 0);
                         if (isRecord)
                         {
@@ -281,6 +309,8 @@ namespace USB3_SDK_Demo
                 }
             }
         }
+
+
 
         /// <summary>
         /// 设置伪彩
@@ -342,6 +372,11 @@ namespace USB3_SDK_Demo
         private void buttonRecord_Click(object sender, RoutedEventArgs e)
         {
             isRecord = true;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }
