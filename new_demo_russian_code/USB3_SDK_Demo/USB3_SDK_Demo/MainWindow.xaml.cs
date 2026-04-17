@@ -21,7 +21,7 @@ using System.Windows.Threading;
 namespace USB3_SDK_Demo
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -103,7 +103,6 @@ namespace USB3_SDK_Demo
             ToggleButton tbn = sender as ToggleButton;
             if (tbn.IsChecked == true)
             {
-                // 停止
                 GSTUsbManager.CloseStream();
                 rgbQ.Clear();
                 vm.CurrImageBrush.ImageSource = null;
@@ -111,7 +110,6 @@ namespace USB3_SDK_Demo
             }
             else
             {
-                // 启动
                 guide_usb_device_info_t deviceInfo = new guide_usb_device_info_t();
                 deviceInfo.width = width;
                 deviceInfo.height = height;
@@ -182,9 +180,7 @@ namespace USB3_SDK_Demo
             }
         }
 
-        /// <summary>
-        /// 连接状态回调
-        /// </summary>
+
         private void OnConnectCallBack(guide_usb_device_status_e device_status)
         {
             this.Dispatcher.BeginInvoke(new Action(() =>
@@ -202,14 +198,11 @@ namespace USB3_SDK_Demo
             }));
         }
 
-        /// <summary>
-        /// 视频流回调
-        /// </summary>
+
         private void OnVideoCallBack(guide_usb_frame_data_t data)
         {
             if (data.frame_rgb_data_length > 0)
             {
-                // 直接送显的数据
                 byte[] rgbData = new byte[data.frame_rgb_data_length];
                 Marshal.Copy(data.frame_rgb_data, rgbData, 0, data.frame_rgb_data_length);
                 rgbQ.Enqueue(rgbData);
@@ -235,13 +228,11 @@ namespace USB3_SDK_Demo
             }
             if (data.frame_yuv_data_length > 0)
             {
-                // YUV数据
                 short[] yuvData = new short[data.frame_yuv_data_length];
                 Marshal.Copy(data.frame_yuv_data, yuvData, 0, data.frame_yuv_data_length);
             }
             if (data.paraLine_length > 0)
             {
-                // 参数行
                 byte[] paraLine = new byte[data.paraLine_length];
                 Marshal.Copy(data.paraLine, paraLine, 0, data.paraLine_length);
             }
@@ -249,9 +240,6 @@ namespace USB3_SDK_Demo
 
         private DateTime dt = DateTime.Now;
         private int fps = 0;
-        /// <summary>
-        /// 处理视频流数据
-        /// </summary>
         private void OnHandleVideoData()
         {
             while (true)
@@ -274,11 +262,8 @@ namespace USB3_SDK_Demo
                         {
                             ushort[] y16Image = y16Q.Peek();
                             adcValue = y16Image[300];
-                            Console.WriteLine("ADC value: " + adcValue);
                             label.Content = adcValue?.ToString() ?? "N/A";
                         }
-
-                        
 
                         bmp.WritePixels(new Int32Rect(0, 0, width, height), rgbData, bmp.BackBufferStride, 0);
                         if (isRecord)

@@ -18,7 +18,7 @@
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="bd" Background="#F0F0F0">
-                                <Label x:Name="lb" Content="X" ToolTip="关闭" FontSize="20" Padding="-5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                                <Label x:Name="lb" Content="X" ToolTip="Закрыть программу" FontSize="20" Padding="-5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="true">
@@ -40,7 +40,7 @@
                 <Grid Grid.Column="0">
                     <GroupBox Header="-RGB-" FontSize="30" Foreground="#333333" BorderThickness="2" BorderBrush="Gray" Width="960" Height="800" HorizontalAlignment="Right" VerticalAlignment="Center">
                         <Border Width="900" Height="720" Margin="0,0,0,20" VerticalAlignment="Bottom">
-                            <Rectangle Fill="{Binding CurrImageBrush}" Stretch="Fill"/>
+                            <Rectangle Fill="{Binding CurrImageBrush}" Stretch="Fill" Cursor="Cross"/>
                         </Border>
                     </GroupBox>
                     <Grid Visibility="Visible" Background="White" Margin="550,-2,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Height="50">
