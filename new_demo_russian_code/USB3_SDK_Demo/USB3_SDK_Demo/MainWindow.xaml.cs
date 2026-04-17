@@ -221,7 +221,7 @@ namespace USB3_SDK_Demo
                     );
                 }
                 
-                if(y16Q.Count==3) y16Q.Clear();
+                if(y16Q.Count>0) y16Q.Clear();
                 y16Q.Enqueue(y16Image);
                 Console.WriteLine("video callback................................................" + y16Q.Count);
 
