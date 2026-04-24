@@ -21,9 +21,9 @@ typedef int (*CloseStream_t)();
 void __stdcall OnFrame(const guide_usb_frame_data_t frame_data) {
   if (frame_data.frame_src_data && frame_data.frame_width == 640 &&
       frame_data.frame_height == 512) {
-    qDebug() << "КАДР Y16!" << frame_data.frame_width << "x"
+    /*qDebug() << "КАДР Y16!" << frame_data.frame_width << "x"
              << frame_data.frame_height
-             << "пикселей:" << frame_data.frame_src_data_length / 2;
+             << "пикселей:" << frame_data.frame_src_data_length / 2;*/
 
     const short *y16 = frame_data.frame_src_data; // ← short*, не ushort!
     int w = frame_data.frame_width, h = frame_data.frame_height;
@@ -32,7 +32,7 @@ void __stdcall OnFrame(const guide_usb_frame_data_t frame_data) {
     // Нормализация signed short → 0-255 (учитываем min/max)
     short minVal = *std::min_element(y16, y16 + totalPixels);
     short maxVal = *std::max_element(y16, y16 + totalPixels);
-    qDebug() << "Диапазон Y16:" << minVal << ".." << maxVal;
+    // qDebug() << "Диапазон Y16:" << minVal << ".." << maxVal;
 
     if (minVal == maxVal)
       minVal = maxVal - 1; // избегать деления на 0
@@ -65,13 +65,15 @@ void __stdcall OnFrame(const guide_usb_frame_data_t frame_data) {
 
     QImage image(rgbData, w, h, QImage::Format_ARGB32_Premultiplied,
                  [](void *data) { delete[] static_cast<uchar *>(data); });
-    mw->updateImage(image);
+
+    QImage img = image.copy();
+    QMetaObject::invokeMethod(mw, "updateImage", Qt::QueuedConnection,
+                              Q_ARG(QImage, img));
   }
 
-  if (frame_data.frame_rgb_data) {
-    qDebug() << "RGB готов:" << frame_data.frame_rgb_data_length << "байт";
-    // Альтернатива: используйте frame_rgb_data напрямую
-  }
+  /*if (frame_data.frame_rgb_data) {
+    // qDebug() << "RGB готов:" << frame_data.frame_rgb_data_length << "байт";
+  }*/
 }
 
 void __stdcall OnStatus(const guide_usb_device_status_e device_status) {
