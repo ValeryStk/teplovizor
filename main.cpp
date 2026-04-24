@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QTimer>
 QLabel *label;
+MainWindow *mw;
 
 // Типы функций (точно по хедеру)
 typedef int (*Initialize_t)();
@@ -64,9 +65,7 @@ void __stdcall OnFrame(const guide_usb_frame_data_t frame_data) {
 
     QImage image(rgbData, w, h, QImage::Format_ARGB32_Premultiplied,
                  [](void *data) { delete[] static_cast<uchar *>(data); });
-    label->setPixmap(QPixmap::fromImage(image.scaled(
-        label->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation)));
-    label->update();
+    mw->updateImage(image);
   }
 
   if (frame_data.frame_rgb_data) {
@@ -84,10 +83,7 @@ void __stdcall OnStatus(const guide_usb_device_status_e device_status) {
 int main(int argc, char *argv[]) {
 
   QApplication a(argc, argv);
-
-  label = new QLabel;
-  label->resize(640, 480);
-  label->show();
+  mw = new MainWindow;
 
   HMODULE dll = LoadLibrary(L"GuideUSB3LiveStream.dll");
   if (!dll) {
@@ -137,14 +133,13 @@ int main(int argc, char *argv[]) {
 
   qDebug() << "Тепловизор работает! Ждем кадры... (30 сек)";
 
-  QTimer::singleShot(5000, [&]() {
+  /*QTimer::singleShot(5000, [&]() {
     CloseStream();
     Exit();
     FreeLibrary(dll);
     QCoreApplication::quit();
-  });
+  });*/
 
-  MainWindow w;
-  w.show();
+  mw->show();
   return a.exec();
 }
