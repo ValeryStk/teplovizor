@@ -7,7 +7,7 @@
 #include "QDebug"
 #include "mainwindow.h"
 #include "windows.h"
-QLabel *label;
+
 MainWindow *mw;
 
 // Типы функций (точно по хедеру)
@@ -125,13 +125,6 @@ int main(int argc, char *argv[]) {
     }
 
     qDebug() << "Тепловизор работает! Ждем кадры... (30 сек)";
-
-    /*QTimer::singleShot(5000, [&]() {
-      CloseStream();
-      Exit();
-      FreeLibrary(dll);
-      QCoreApplication::quit();
-    });*/
 
     mw->show();
     return a.exec();
