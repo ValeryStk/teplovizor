@@ -10,7 +10,7 @@
 
 MainWindow *mw;
 
-// Типы функций (точно по хедеру)
+// Типы функций (точно по хедеру GuideUSBLiveStream.h)
 typedef int (*Initialize_t)();
 typedef int (*Exit_t)();
 typedef int (*GetDeviceList_t)(device_info_list *);
@@ -20,8 +20,9 @@ typedef int (*OpenStream_t)(guide_usb_device_info_t *,
 typedef int (*CloseStream_t)();
 
 void __stdcall OnFrame(const guide_usb_frame_data_t frame_data) {
-    if (frame_data.frame_src_data && frame_data.frame_width == 640 &&
-        frame_data.frame_height == 512) {
+    if (frame_data.frame_src_data &&
+        frame_data.frame_width == TEPLOVIZOR_WIDTH &&
+        frame_data.frame_height == TEPLOVIZOR_HEIGHT) {
         const short *y16 = frame_data.frame_src_data;  // ← short*, не ushort!
         int w = frame_data.frame_width, h = frame_data.frame_height;
         int totalPixels = w * h;
