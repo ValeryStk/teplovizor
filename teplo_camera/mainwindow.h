@@ -22,7 +22,16 @@ public:
 public slots:
     void updateImage(QImage img);
 
+private slots:
+    void createTestRandomImage();
+
 private:
     Ui::MainWindow *ui;
+    QTimer *m_timer;
+    QImage m_lastImage;
+
+    // QObject interface
+public:
+    bool eventFilter(QObject *obj, QEvent *event);
 };
 #endif  // MAINWINDOW_H

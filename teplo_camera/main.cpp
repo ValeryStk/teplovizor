@@ -103,7 +103,7 @@ int main(int argc, char *argv[]) {
     // Инициализация
     if (Initialize() != 1) {
         qDebug() << "Initialize() failed";
-        return -1;
+        // return -1;
     } else {
         qDebug() << "Camera initialized";
     }
@@ -112,7 +112,7 @@ int main(int argc, char *argv[]) {
     if (GetDeviceList(&devs) != 1 || devs.devCount == 0) {
         qDebug() << "Камера не найдена";
         Exit();
-        return -1;
+        // return -1;
     } else {
         qDebug() << "Камер найдено: " << devs.devCount;
     }
@@ -122,10 +122,8 @@ int main(int argc, char *argv[]) {
     if (OpenStream(&info, OnFrame, OnStatus) != 1) {
         qDebug() << "OpenStream failed";
         Exit();
-        return -1;
+        // return -1;
     }
-
-    qDebug() << "Тепловизор работает! Ждем кадры... (30 сек)";
 
     mw->show();
     return a.exec();
