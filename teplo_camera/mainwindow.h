@@ -25,10 +25,15 @@ public slots:
 private slots:
     void createTestRandomImage();
 
+    void on_pushButton_singleShot_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTimer *m_timer;
     QImage m_lastImage;
+    QPoint m_cursor_point{0, 0};
+
+    void saveImageAsync(const QImage &img, const QString &fileName);
 
     // QObject interface
 public:
