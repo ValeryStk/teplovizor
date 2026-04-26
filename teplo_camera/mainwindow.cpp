@@ -59,6 +59,9 @@ void MainWindow::createTestRandomImage() {
                                       .arg(pixelValue);
         ui->label_cursor_value->setText(valueText);
     }
+    if (ui->pushButton_record->isChecked()) {
+        on_pushButton_singleShot_clicked();
+    }
 }
 
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
@@ -91,3 +94,5 @@ void MainWindow::on_pushButton_singleShot_clicked() {
     saveImageAsync(
         img, QDateTime::currentDateTime().toString("yyyy_MM_dd_hh_mm_ss_zzz"));
 }
+
+void MainWindow::on_pushButton_record_toggled(bool checked) {}

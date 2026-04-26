@@ -27,6 +27,8 @@ private slots:
 
     void on_pushButton_singleShot_clicked();
 
+    void on_pushButton_record_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
     QTimer *m_timer;
