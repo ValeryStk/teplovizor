@@ -20,7 +20,13 @@ typedef int (*OpenStream_t)(guide_usb_device_info_t *,
 typedef int (*CloseStream_t)();
 
 void __stdcall OnFrame(const guide_usb_frame_data_t frame_data) {
-  // В начале функции OnFrame
+
+  /*if (mw->m_isBusy.load()) {
+    qDebug() << "GUI is Busy....";
+    return; // Если GUI еще занят, просто выбрасываем этот кадр
+  }
+
+  mw->m_isBusy.store(true);*/
   if (frame_data.frame_src_data && frame_data.frame_width == TEPLOVIZOR_WIDTH &&
       frame_data.frame_height == TEPLOVIZOR_HEIGHT) {
 
@@ -35,17 +41,17 @@ void __stdcall OnFrame(const guide_usb_frame_data_t frame_data) {
     if (minVal == maxVal)
       maxVal = minVal + 1;
 
-    quint16 *grayData = new quint16[totalPixels];
+    QImage image(w, h, QImage::Format_Grayscale16);
 
-    for (int i = 0; i < totalPixels; ++i) {
-      int norm = (int)((y16[i] - minVal) * 65535LL / (maxVal - minVal));
-      norm = qBound(0, norm, 65535);
-      grayData[i] = static_cast<quint16>(norm);
+    for (int y = 0; y < h; ++y) {
+      quint16 *line = reinterpret_cast<quint16 *>(image.scanLine(y));
+      for (int x = 0; x < w; ++x) {
+        int i = y * w + x;
+        int norm = int((y16[i] - minVal) * 65535LL / (maxVal - minVal));
+        norm = qBound(0, norm, 65535);
+        line[x] = static_cast<quint16>(norm);
+      }
     }
-    QImage image(reinterpret_cast<const uchar *>(grayData), w, h,
-                 w * sizeof(quint16), QImage::Format_Grayscale16,
-                 [](void *data) { delete[] static_cast<quint16 *>(data); });
-
     QMetaObject::invokeMethod(mw, "updateImage", Qt::QueuedConnection,
                               Q_ARG(QImage, image));
   }

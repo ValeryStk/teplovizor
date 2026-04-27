@@ -24,24 +24,27 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::updateImage(QImage img) {
-  ui->label_image->setPixmap(QPixmap::fromImage(img));
-  m_lastImage = img.copy();
-  if (!m_lastImage.isNull() && m_cursor_point.x() >= 0 &&
-      m_cursor_point.x() < m_lastImage.width() && m_cursor_point.y() >= 0 &&
-      m_cursor_point.y() < m_lastImage.height()) {
+  m_isBusy.store(true);
+  m_lastImage = img;
+  if (!img.isNull() && m_cursor_point.x() >= 0 &&
+      m_cursor_point.x() < img.width() && m_cursor_point.y() >= 0 &&
+      m_cursor_point.y() < img.height()) {
 
     const unsigned short *line = reinterpret_cast<const unsigned short *>(
-        m_lastImage.scanLine(m_cursor_point.y()));
+        img.scanLine(m_cursor_point.y()));
     unsigned short pixelValue = line[m_cursor_point.x()];
     const QString valueText = QString("x:%1 y:%2 value:%3")
                                   .arg(m_cursor_point.x())
                                   .arg(m_cursor_point.y())
                                   .arg(pixelValue);
     ui->label_cursor_value->setText(valueText);
+    ui->label_image->setPixmap(QPixmap::fromImage(std::move(img)));
   }
   if (ui->pushButton_record->isChecked()) {
     on_pushButton_singleShot_clicked();
   }
+
+  m_isBusy.store(false);
 }
 
 void MainWindow::createTestRandomImage() {
@@ -64,7 +67,7 @@ void MainWindow::createTestRandomImage() {
   QImage img(reinterpret_cast<uchar *>(data.data()), width, height,
              width * sizeof(unsigned short), QImage::Format_Grayscale16);
   m_lastImage = img.copy();
-  updateImage(img);
+  updateImage(std::move(img));
   if (!m_lastImage.isNull() && m_cursor_point.x() >= 0 &&
       m_cursor_point.x() < m_lastImage.width() && m_cursor_point.y() >= 0 &&
       m_cursor_point.y() < m_lastImage.height()) {

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <atomic>
 
 constexpr int TEPLOVIZOR_WIDTH = 640;
 constexpr int TEPLOVIZOR_HEIGHT = 512;
@@ -18,7 +19,7 @@ class MainWindow : public QMainWindow {
 public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
-
+  std::atomic<bool> m_isBusy = false;
 public slots:
   void updateImage(QImage img);
 
