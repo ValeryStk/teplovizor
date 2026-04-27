@@ -79,7 +79,10 @@ int main(int argc, char *argv[]) {
   auto OpenStream = (OpenStream_t)GetProcAddress(dll, "OpenStream");
   auto CloseStream = (CloseStream_t)GetProcAddress(dll, "CloseStream");
   auto Exit = (Exit_t)GetProcAddress(dll, "Exit");
-
+  QObject::connect(&a, &QApplication::aboutToQuit, [&]() {
+    qDebug() << "Exit from DllLibrary...";
+    Exit();
+  });
   if (!Initialize || !GetDeviceList || !OpenStream || !CloseStream || !Exit) {
     qDebug() << "Функции не найдены!";
     FreeLibrary(dll);
